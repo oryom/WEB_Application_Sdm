@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: GuiScenes.GuiMain
+Class-Path: /Logic_jar/Logic.jar
+

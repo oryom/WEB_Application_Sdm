@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="619.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GuiScenes.showOrders.ShowOrderSceneController">
+   <content>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="616.0" prefWidth="841.0">
+         <children>
+            <Pane layoutX="5.0" layoutY="7.0" prefHeight="603.0" prefWidth="835.0">
+               <children>
+                  <ScrollPane layoutY="50.0" prefHeight="436.0" prefWidth="783.0">
+                     <content>
+                        <FlowPane fx:id="summeryFlowPane" prefHeight="427.0" prefWidth="773.0" />
+                     </content>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </ScrollPane>
+                  <Label layoutX="23.0" layoutY="491.0" text="Order Cost:" />
+                  <Label layoutX="23.0" layoutY="521.0" text="Total Delivery Cost:" />
+                  <Label layoutX="23.0" layoutY="552.0" text="Total Order &amp; Delivery Cost:" />
+                  <Label fx:id="orderCostLabel" layoutX="111.0" layoutY="491.0" />
+                  <Label fx:id="totalDeliveryCostLabel" layoutX="155.0" layoutY="521.0" />
+                  <Label fx:id="totalOrderAndDeliveryCostLabel" layoutX="215.0" layoutY="552.0" />
+                  <ComboBox fx:id="orderComboBox" layoutX="12.0" layoutY="14.0" onAction="#orderComboBoxOnAction" prefWidth="150.0" />
+                  <Label layoutX="191.0" layoutY="19.0" prefHeight="21.0" prefWidth="88.0" text="Order Date:" />
+                  <Label fx:id="dateLabel" layoutX="271.0" layoutY="19.0" />
+                  <Label layoutX="436.0" layoutY="19.0" text="Order Id:" />
+                  <Label fx:id="orderIdLabel" layoutX="501.0" layoutY="19.0" />
+                  <Label layoutX="599.0" layoutY="19.0" text="Customer Name:" />
+                  <Label fx:id="customerNameLabel" layoutX="720.0" layoutY="19.0" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Pane>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </AnchorPane>
+   </content>
+</ScrollPane>

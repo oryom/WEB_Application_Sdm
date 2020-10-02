@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GuiScenes.makeOrderScene.MakeOrderSceneController">
+   <content>
+      <AnchorPane>
+         <children>
+            <SplitPane dividerPositions="0.12424242424242424" layoutY="-23.0" orientation="VERTICAL" prefHeight="662.0" prefWidth="886.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-23.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="82.0" prefWidth="884.0">
+                     <children>
+                        <Pane layoutX="3.0" layoutY="1.0" prefHeight="138.0" prefWidth="883.0">
+                           <children>
+                              <ComboBox fx:id="customerSelectionComboBox" layoutX="246.0" layoutY="29.0" onAction="#customerComboBoxOnAction" prefHeight="31.0" prefWidth="180.0" />
+                              <ComboBox fx:id="storeComboBox" layoutX="662.0" layoutY="30.0" onAction="#StoreComboBoxOnAction" prefHeight="31.0" prefWidth="180.0" />
+                              <DatePicker fx:id="OrderDatePicker" layoutX="31.0" layoutY="27.0" onAction="#OrderDatePickerOnAction" prefHeight="32.0" prefWidth="181.0" />
+                              <ComboBox fx:id="statDyneComboBox" layoutX="452.0" layoutY="29.0" onAction="#StatDynmComboBoxOnAction" prefHeight="31.0" prefWidth="180.0" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="bottomAnchorPane" prefHeight="530.0" prefWidth="884.0" />
+              </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>
