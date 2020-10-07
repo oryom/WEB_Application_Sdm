@@ -23,7 +23,7 @@ public class MySuperMarket {
         this.items = new MyItems(sdmSuper.getSDMItems());
         this.stores = new MyStores(sdmSuper.getSDMStores(),items);
         this.orders = new MyOrders();
-        this.customers = new MyCustomers(sdmSuper.getSDMCustomers()) ;
+       // this.customers = new MyCustomers(sdmSuper.getSDMCustomers()) ;
 
         //updates for each item avg price & how many stores sells each item.
         updateMyItemsParameters();
@@ -149,7 +149,9 @@ public class MySuperMarket {
         order.setStoreSingleOrderItemsMap(storeSingleOrderItemsMap);
         MyCustomer customer = order.getCustomer();
         // add order to customer
-        customer.addOrder(order);
+        /**
+         customer.addOrder(order);
+        */
         // add order to super market orders
         this.getOrders().addOrder(order);
 
@@ -219,16 +221,16 @@ public class MySuperMarket {
         return map;
     }
 
-    public void calculateDeliveryCostMap(Map<MyStoreItem, Double> myStoreItemDoubleMap,
-                                         Map<Integer, Double> deliveryMap, MyCustomer customer) {
-        for (MyStoreItem storeItem:myStoreItemDoubleMap.keySet()) {
-            if(!deliveryMap.containsKey(storeItem.getStoreId())){
-                MyStore store = this.getStores().getStoreMap().get(storeItem.getStoreId());
-                deliveryMap.put(storeItem.getStoreId(),
-                        calculateDeliveryCost(store,store.getMyLocation(),customer.getLocation()));
-            }
-        }
-    }
+//    public void calculateDeliveryCostMap(Map<MyStoreItem, Double> myStoreItemDoubleMap,
+//                                         Map<Integer, Double> deliveryMap, MyCustomer customer) {
+//        for (MyStoreItem storeItem:myStoreItemDoubleMap.keySet()) {
+//            if(!deliveryMap.containsKey(storeItem.getStoreId())){
+//                MyStore store = this.getStores().getStoreMap().get(storeItem.getStoreId());
+//                deliveryMap.put(storeItem.getStoreId(),
+//                        calculateDeliveryCost(store,store.getMyLocation(),customer.getLocation()));
+//            }
+//        }
+//    }
 
     public void resetSpinnersForDynamic(Map<MyItem, Double> selectedMyItemsMap) {
         for (MyItem item:selectedMyItemsMap.keySet()) {
@@ -265,44 +267,46 @@ public class MySuperMarket {
     }
 
     public int getMaxRows() {
-        List<MyStore> storeList = stores.getStoreList();
-        List<MyCustomer> customerList = customers.getCustomerList();
-
-        int maxRowStore = 0 ;
-        int maxRowCustomer=0;
-        for (MyStore store: storeList) {
-            int y = store.getMyLocation().getSdmLocation().getY();
-            if(y>maxRowStore)
-                maxRowStore = y ;
-        }
-        for (MyCustomer customer: customerList) {
-            int y = customer.getLocation().getSdmLocation().getY();
-            if(y>maxRowCustomer)
-                maxRowCustomer = y ;
-        }
-
-
-        return Math.max(maxRowCustomer,maxRowStore);
+//        List<MyStore> storeList = stores.getStoreList();
+//        List<MyCustomer> customerList = customers.getCustomerList();
+//
+//        int maxRowStore = 0 ;
+//        int maxRowCustomer=0;
+//        for (MyStore store: storeList) {
+//            int y = store.getMyLocation().getSdmLocation().getY();
+//            if(y>maxRowStore)
+//                maxRowStore = y ;
+//        }
+//        for (MyCustomer customer: customerList) {
+//            int y = customer.getLocation().getSdmLocation().getY();
+//            if(y>maxRowCustomer)
+//                maxRowCustomer = y ;
+//        }
+//
+//
+//        return Math.max(maxRowCustomer,maxRowStore);
+        return 0 ;
     }
 
     public int getMaxCols() {
-        List<MyStore> storeList = stores.getStoreList();
-        List<MyCustomer> customerList = customers.getCustomerList();
-
-        int maxColStore = 0 ;
-        int maxColCustomer=0;
-        for (MyStore store: storeList) {
-            int x = store.getMyLocation().getSdmLocation().getX();
-            if(x > maxColStore)
-                maxColStore = x ;
-        }
-        for (MyCustomer customer: customerList) {
-            int x = customer.getLocation().getSdmLocation().getX();
-            if(x>maxColCustomer)
-                maxColCustomer = x ;
-        }
-
-
-        return Math.max(maxColCustomer, maxColStore);
+//        List<MyStore> storeList = stores.getStoreList();
+//        List<MyCustomer> customerList = customers.getCustomerList();
+//
+//        int maxColStore = 0 ;
+//        int maxColCustomer=0;
+//        for (MyStore store: storeList) {
+//            int x = store.getMyLocation().getSdmLocation().getX();
+//            if(x > maxColStore)
+//                maxColStore = x ;
+//        }
+//        for (MyCustomer customer: customerList) {
+//            int x = customer.getLocation().getSdmLocation().getX();
+//            if(x>maxColCustomer)
+//                maxColCustomer = x ;
+//        }
+//
+//
+//        return Math.max(maxColCustomer, maxColStore);
+        return 0;
     }
 }

@@ -157,7 +157,7 @@ public class MyOrder {
     public String toString() {
         return
                 orderId + " made by: "
-                + customer.getName();
+                 /*customer.getName()*/;
     }
 
     public String getDateAsString() {

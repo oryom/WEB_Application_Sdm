@@ -23,7 +23,8 @@ public class XmlLoaderTask extends Task<Boolean> {
         return validationForBuild;
     }
 
-    public XmlLoaderTask(String path, Consumer<MySuperMarket> superMarketConsumer, Consumer<Boolean> validationConsumer ){
+    public XmlLoaderTask(String path, Consumer<MySuperMarket> superMarketConsumer,
+                         Consumer<Boolean> validationConsumer ){
         this.filePath = path;
         this.superMarketDelegate = superMarketConsumer;
         this.isSuperMarketIsValidDelegate = validationConsumer;
@@ -139,23 +140,23 @@ public class XmlLoaderTask extends Task<Boolean> {
 
     private boolean checKIsCordUniq(SuperDuperMarketDescriptor temp) {
         boolean returnBoolean =true;
-        List<Location> locations = new ArrayList<>();
-        List<SDMStore> stores = temp.getSDMStores().getSDMStore();
-        List<SDMCustomer> customers = temp.getSDMCustomers().getSDMCustomer();
-        for (SDMStore store : stores) {
-            locations.add(store.getLocation());
-        }
-        for (SDMCustomer customer:customers) {
-            locations.add(customer.getLocation());
-        }
-        int size = locations.size(); // locations size
-        for(int i = 0 ; i<size-1;++i) {
-            for (int j = i + 1; j < size; ++j) {
-                if(locations.get(i).getX() == locations.get(j).getX() &&
-                        locations.get(i).getY() == locations.get(j).getY())
-                    returnBoolean = false   ;
-            }
-        }
+//        List<Location> locations = new ArrayList<>();
+//        List<SDMStore> stores = temp.getSDMStores().getSDMStore();
+//        List<SDMCustomer> customers = temp.getSDMCustomers().getSDMCustomer();
+//        for (SDMStore store : stores) {
+//            locations.add(store.getLocation());
+//        }
+//        for (SDMCustomer customer:customers) {
+//            locations.add(customer.getLocation());
+//        }
+//        int size = locations.size(); // locations size
+//        for(int i = 0 ; i<size-1;++i) {
+//            for (int j = i + 1; j < size; ++j) {
+//                if(locations.get(i).getX() == locations.get(j).getX() &&
+//                        locations.get(i).getY() == locations.get(j).getY())
+//                    returnBoolean = false   ;
+//            }
+//        }
         return returnBoolean;
     }
 
@@ -180,15 +181,15 @@ public class XmlLoaderTask extends Task<Boolean> {
 
     //3.3.2
     private boolean checkIsCustomerIdUnique(SuperDuperMarketDescriptor temp) {
-        boolean returnBoolean =true;
-        List<SDMCustomer> arr = temp.getSDMCustomers().getSDMCustomer();
-        int size = arr.size();
-        for(int i = 0 ; i<size-1;++i) {
-            for (int j = i + 1; j < size; ++j) {
-                if (arr.get(i).getId() == arr.get(j).getId())
-                    returnBoolean = false;
-            }
-        }
+          boolean returnBoolean =true;
+//        List<SDMCustomer> arr = temp.getSDMCustomers().getSDMCustomer();
+//        int size = arr.size();
+//        for(int i = 0 ; i<size-1;++i) {
+//            for (int j = i + 1; j < size; ++j) {
+//                if (arr.get(i).getId() == arr.get(j).getId())
+//                    returnBoolean = false;
+//            }
+//        }
                 return returnBoolean;
     }
 
@@ -204,13 +205,13 @@ public class XmlLoaderTask extends Task<Boolean> {
             if(x<1 || x>50 || y<1 || y>50)
                 returnBoolean =false ;
         }
-        for (SDMCustomer customer:temp.getSDMCustomers().getSDMCustomer()) {
-            x = customer.getLocation().getX();
-            y = customer.getLocation().getY();
-            if(x<1 || x>50 || y<1 || y>50)
-                returnBoolean =false ;
-
-        }
+//        for (SDMCustomer customer:temp.getSDMCustomers().getSDMCustomer()) {
+//            x = customer.getLocation().getX();
+//            y = customer.getLocation().getY();
+//            if(x<1 || x>50 || y<1 || y>50)
+//                returnBoolean =false ;
+//
+//        }
         return returnBoolean;
     }
 
